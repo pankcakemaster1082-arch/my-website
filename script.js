@@ -99,14 +99,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('.contact-form[action^="https://formsubmit.co/"]');
     if (contactForm) {
         const submitButton = contactForm.querySelector('button[type="submit"]');
-        contactForm.addEventListener('submit', () => {
-            if (!contactForm.checkValidity()) {
+        const status = contactForm.querySelector('.form-status');
+        let isSubmitting = false;
+
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            if (isSubmitting || !contactForm.reportValidity()) {
                 return;
             }
 
+            isSubmitting = true;
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
             contactForm.setAttribute('aria-busy', 'true');
+            status.textContent = 'Sending your message...';
+
+            try {
+                const endpoint = contactForm.action.replace(
+                    'https://formsubmit.co/',
+                    'https://formsubmit.co/ajax/'
+                );
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(Object.fromEntries(new FormData(contactForm).entries()))
+                });
+                const result = await response.json();
+
+                if (!response.ok || (result.success !== true && result.success !== 'true')) {
+                    throw new Error(result.message || `The form service returned status ${response.status}.`);
+                }
+
+                submitButton.textContent = 'Submitted!';
+                status.textContent = 'Thank you! Your message has been sent. We’ll be in touch soon.';
+                contactForm.setAttribute('aria-busy', 'false');
+            } catch (error) {
+                console.error('Could not submit contact form:', error);
+                isSubmitting = false;
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+                contactForm.setAttribute('aria-busy', 'false');
+                status.textContent = 'Sorry, your message could not be sent. Please try again or email us directly.';
+            }
         });
     }
 
