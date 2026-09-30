@@ -96,4 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoplay();
     }
 
+    const contactForm = document.querySelector('.contact-form[action^="https://formsubmit.co/"]');
+    if (contactForm) {
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        contactForm.addEventListener('submit', () => {
+            if (!contactForm.checkValidity()) {
+                return;
+            }
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            contactForm.setAttribute('aria-busy', 'true');
+        });
+    }
+
 });
