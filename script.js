@@ -96,17 +96,4 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoplay();
     }
 
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        const status = contactForm.querySelector('.form-status');
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            if (!contactForm.reportValidity()) {
-                return;
-            }
-
-            status.textContent = 'This demo form is not connected to email yet, so your message has not been sent.';
-        });
-    }
 });

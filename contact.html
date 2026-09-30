@@ -70,24 +70,26 @@
         </section>
 
         <section class="contact-card" id="contact-form">
-            <form class="contact-form">
+            <form class="contact-form" action="https://formsubmit.co/Rclark1776@outlook.com" method="POST">
+                <input type="hidden" name="_subject" value="New website inquiry">
+                <input type="hidden" name="_template" value="table">
                 <div class="form-row">
                     <label for="name">Name</label>
-                    <input id="name" type="text" placeholder="Your name" required>
+                    <input id="name" name="name" type="text" placeholder="Your name" required>
                 </div>
 
                 <div class="form-row">
                     <label for="email">Email</label>
-                    <input id="email" type="email" placeholder="Your email" required>
+                    <input id="email" name="email" type="email" placeholder="Your email" required>
                 </div>
 
                 <div class="form-row">
                     <label for="message">Message</label>
-                    <textarea id="message" placeholder="Tell us what you're looking for..." rows="5" required></textarea>
+                    <textarea id="message" name="message" placeholder="Tell us what you're looking for..." rows="5" required></textarea>
                 </div>
 
                 <button type="submit" class="log-button full-width">Send Message</button>
-                <p class="form-status" aria-live="polite">This contact form is a demo and is not connected to email yet.</p>
+                <p class="form-status" aria-live="polite">Your message will be emailed to us when you submit this form.</p>
             </form>
         </section>
     </main>
