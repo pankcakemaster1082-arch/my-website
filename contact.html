@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Clarks Custom Builds</title>
+    <meta name="description" content="Get in touch with Clarks Custom Builds for custom woodworking and furniture requests.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container">
+            <div class="brand" aria-label="Clarks Custom Builds home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 72 72" role="img" aria-label="CCB, Clarks Custom Builds">
+                        <defs>
+                            <radialGradient id="badge-wood" cx="34%" cy="28%" r="78%">
+                                <stop offset="0" stop-color="#70482f"></stop>
+                                <stop offset="1" stop-color="#251810"></stop>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="36" cy="36" r="33" fill="#20140e" stroke="#d6ad7d" stroke-width="2"></circle>
+                        <circle cx="36" cy="36" r="28.5" fill="url(#badge-wood)" stroke="#5d3a25" stroke-width="1.5"></circle>
+                        <circle cx="36" cy="36" r="23.5" fill="none" stroke="#d6ad7d" stroke-opacity=".74" stroke-width="1"></circle>
+                        <path d="M19 18c8 3 16 3 25 0M18 23c8 3 17 3 27 0M24 54c8 2 16 2 24-1" fill="none" stroke="#c09266" stroke-opacity=".36" stroke-width="1"></path>
+                        <text x="36" y="42" text-anchor="middle" fill="#fff2dc" font-size="18" font-weight="800" letter-spacing="-.8" font-family="Georgia, 'Times New Roman', serif">CCB</text>
+                        <path d="M23 47h26" stroke="#e1bd91" stroke-opacity=".8" stroke-width="1"></path>
+                    </svg>
+                </span>
+                <div>
+                    <strong>Clarks Custom Builds</strong>
+                    <small>Louisiana Craftsmanship</small>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="available-builds.html">Available Builds</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+
+            <a class="tape-button quote-button" href="#contact-form">Request Quote</a>
+        </nav>
+    </header>
+
+    <main class="page-shell container contact-page">
+        <section class="contact-copy">
+            <p class="eyebrow">Let’s build something great</p>
+            <h1>Bring your next woodworking project to life.</h1>
+            <p>Tell us what you need and we’ll help shape a custom solution for your home, shop, or workspace.</p>
+
+            <ul class="contact-details">
+                <li>Custom furniture & fixtures</li>
+                <li>Shop storage & organization</li>
+                <li>Interior wood accents</li>
+            </ul>
+
+            <address class="personal-contact">
+                <span class="contact-owner">Owner · Ryan Clark</span>
+                <a href="mailto:Rclark1776@outlook.com">
+                    <span>Email</span>
+                    <strong>Rclark1776@outlook.com</strong>
+                </a>
+                <a href="tel:+13377035707">
+                    <span>Phone</span>
+                    <strong>(337) 703-5707</strong>
+                </a>
+            </address>
+        </section>
+
+        <section class="contact-card" id="contact-form">
+            <form class="contact-form">
+                <div class="form-row">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" placeholder="Your name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="Your email" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Tell us what you're looking for..." rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="log-button full-width">Send Message</button>
+                <p class="form-status" aria-live="polite">This contact form is a demo and is not connected to email yet.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <h3>Clarks Custom Builds</h3>
+                <p>Custom woodworking built with pride in Louisiana.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

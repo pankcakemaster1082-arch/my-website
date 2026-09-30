@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Builds | Clarks Custom Builds</title>
+    <meta name="description" content="Browse completed woodworking pieces available from Clarks Custom Builds.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container">
+            <a class="brand" href="index.html" aria-label="Clarks Custom Builds home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 72 72">
+                        <defs>
+                            <radialGradient id="badge-wood" cx="34%" cy="28%" r="78%">
+                                <stop offset="0" stop-color="#70482f"></stop>
+                                <stop offset="1" stop-color="#251810"></stop>
+                            </radialGradient>
+                        </defs>
+                        <circle cx="36" cy="36" r="33" fill="#20140e" stroke="#d6ad7d" stroke-width="2"></circle>
+                        <circle cx="36" cy="36" r="28.5" fill="url(#badge-wood)" stroke="#5d3a25" stroke-width="1.5"></circle>
+                        <circle cx="36" cy="36" r="23.5" fill="none" stroke="#d6ad7d" stroke-opacity=".74" stroke-width="1"></circle>
+                        <path d="M19 18c8 3 16 3 25 0M18 23c8 3 17 3 27 0M24 54c8 2 16 2 24-1" fill="none" stroke="#c09266" stroke-opacity=".36" stroke-width="1"></path>
+                        <text x="36" y="42" text-anchor="middle" fill="#fff2dc" font-size="18" font-weight="800" letter-spacing="-.8" font-family="Georgia, 'Times New Roman', serif">CCB</text>
+                        <path d="M23 47h26" stroke="#e1bd91" stroke-opacity=".8" stroke-width="1"></path>
+                    </svg>
+                </span>
+                <span>
+                    <strong>Clarks Custom Builds</strong>
+                    <small>Louisiana Craftsmanship</small>
+                </span>
+            </a>
+            <div class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="available-builds.html" class="active" aria-current="page">Available Builds</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a class="tape-button quote-button" href="contact.html#contact-form">Request Quote</a>
+        </nav>
+    </header>
+
+    <main class="page-shell container">
+        <section class="page-header">
+            <p class="eyebrow">Ready-made woodworking</p>
+            <h1>Available Builds</h1>
+            <p>Browse completed pieces that are ready for a new home. Each listing will include photos, pricing, and purchase details.</p>
+        </section>
+
+        <p class="inventory-status" id="inventory-status" role="status" aria-live="polite">Loading available builds…</p>
+        <section class="product-grid products-page-grid available-builds-grid" id="available-builds-list" aria-label="Available builds"></section>
+
+        <section class="available-empty-state" id="available-empty-state" aria-labelledby="available-empty-title" hidden>
+            <p class="eyebrow">Current inventory</p>
+            <h2 id="available-empty-title">No builds are listed right now.</h2>
+            <p>Check back soon for finished pieces available to purchase, or contact us to ask about a ready-made build.</p>
+            <a class="log-button" href="contact.html#contact-form">Ask about a build</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <h3>Clarks Custom Builds</h3>
+                <p>Custom woodworking built with pride in Louisiana.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Manage listings</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="available-builds.js"></script>
+</body>
+</html>

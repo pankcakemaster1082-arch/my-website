@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Available Builds | Clarks Custom Builds</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container">
+            <a class="brand" href="index.html" aria-label="Clarks Custom Builds home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 72 72">
+                        <defs>
+                            <radialGradient id="badge-wood" cx="34%" cy="28%" r="78%">
+                                <stop offset="0" stop-color="#70482f"></stop>
+                                <stop offset="1" stop-color="#251810"></stop>
+                            </radialGradient>
+                        </defs>
+                        <circle cx="36" cy="36" r="33" fill="#20140e" stroke="#d6ad7d" stroke-width="2"></circle>
+                        <circle cx="36" cy="36" r="28.5" fill="url(#badge-wood)" stroke="#5d3a25" stroke-width="1.5"></circle>
+                        <circle cx="36" cy="36" r="23.5" fill="none" stroke="#d6ad7d" stroke-opacity=".74" stroke-width="1"></circle>
+                        <text x="36" y="42" text-anchor="middle" fill="#fff2dc" font-size="18" font-weight="800" letter-spacing="-.8" font-family="Georgia, 'Times New Roman', serif">CCB</text>
+                    </svg>
+                </span>
+                <span>
+                    <strong>Clarks Custom Builds</strong>
+                    <small>Listing Manager</small>
+                </span>
+            </a>
+            <div class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="available-builds.html">Available Builds</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-shell container admin-page">
+        <section class="page-header">
+            <p class="eyebrow">Private listing tools</p>
+            <h1>Manage available builds</h1>
+            <p>Sign in to add finished pieces, upload photos, set prices, and mark builds sold.</p>
+        </section>
+
+        <p class="admin-status" id="admin-status" role="status" aria-live="polite"></p>
+
+        <section class="contact-card admin-card" id="admin-login">
+            <h2>Admin sign in</h2>
+            <form id="login-form" class="contact-form">
+                <div class="form-row">
+                    <label for="admin-email">Email</label>
+                    <input id="admin-email" name="email" type="email" autocomplete="username" required>
+                </div>
+                <div class="form-row">
+                    <label for="admin-password">Password</label>
+                    <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+                </div>
+                <button class="log-button full-width" type="submit">Sign in</button>
+            </form>
+        </section>
+
+        <section class="admin-dashboard" id="admin-dashboard" hidden>
+            <div class="admin-dashboard-heading">
+                <h2>Your listings</h2>
+                <button class="log-button small" id="sign-out-button" type="button">Sign out</button>
+            </div>
+
+            <section class="contact-card admin-card">
+                <h2>Add a finished build</h2>
+                <form id="build-form" class="contact-form">
+                    <div class="form-row">
+                        <label for="build-title">Listing title</label>
+                        <input id="build-title" name="title" type="text" maxlength="120" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="build-description">Description</label>
+                        <textarea id="build-description" name="description" maxlength="2000" rows="4" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label for="build-price">Price (USD)</label>
+                        <input id="build-price" name="price" type="number" min="0.01" step="0.01" inputmode="decimal" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="build-photo">Listing photo (JPG, PNG, or WebP; max 8 MB)</label>
+                        <input id="build-photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required>
+                        <img class="admin-image-preview" id="photo-preview" alt="Selected listing photo preview" hidden>
+                    </div>
+                    <button class="log-button full-width" type="submit">Publish build</button>
+                </form>
+            </section>
+
+            <div id="admin-listings" class="admin-listings" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <h3>Clarks Custom Builds</h3>
+                <p>Custom woodworking built with pride in Louisiana.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="available-builds.html">Available Builds</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

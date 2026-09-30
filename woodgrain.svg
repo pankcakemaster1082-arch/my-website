@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="64" viewBox="0 0 480 64">
+  <defs>
+    <linearGradient id="board" x2="0" y2="1">
+      <stop stop-color="#70442d"/>
+      <stop offset=".24" stop-color="#603922"/>
+      <stop offset=".52" stop-color="#512f1d"/>
+      <stop offset=".8" stop-color="#442719"/>
+      <stop offset="1" stop-color="#58351f"/>
+    </linearGradient>
+    <filter id="grain-warp" x="-2%" y="-12%" width="104%" height="124%">
+      <feTurbulence type="fractalNoise" baseFrequency=".006 .11" numOctaves="2" seed="17" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="fine-texture" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".018 .42" numOctaves="2" seed="5"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="480" height="64" fill="url(#board)"/>
+  <g fill="none" filter="url(#grain-warp)" stroke-linecap="round">
+    <path d="M-8 8 C48 5 70 12 126 8 S210 5 264 9 360 13 420 8 466 6 490 9" stroke="#c39267" stroke-opacity=".2" stroke-width="1.2"/>
+    <path d="M-8 13 C46 16 90 10 142 14 S224 18 280 13 372 9 430 14 468 17 490 12" stroke="#24140d" stroke-opacity=".4" stroke-width="1.7"/>
+    <path d="M-8 19 C36 16 89 22 138 19 S221 15 278 20 365 24 414 19 466 16 490 20" stroke="#a87851" stroke-opacity=".16" stroke-width=".8"/>
+    <path d="M-8 25 C50 28 95 22 152 25 S242 30 294 25 375 21 430 26 470 28 490 24" stroke="#24140d" stroke-opacity=".42" stroke-width="1.3"/>
+    <path d="M-8 31 C42 28 87 35 143 31 S237 27 289 32 376 36 427 31 468 29 490 32" stroke="#bd8b60" stroke-opacity=".17" stroke-width="1"/>
+    <path d="M-8 38 C42 42 86 35 140 39 S231 44 288 38 372 34 425 39 470 42 490 38" stroke="#21130c" stroke-opacity=".44" stroke-width="1.8"/>
+    <path d="M-8 45 C43 42 95 48 150 45 S238 41 290 46 378 50 431 45 470 43 490 46" stroke="#ae7b53" stroke-opacity=".15" stroke-width=".9"/>
+    <path d="M-8 52 C44 55 92 49 148 52 S238 57 292 52 374 48 427 53 468 56 490 52" stroke="#24140d" stroke-opacity=".4" stroke-width="1.4"/>
+    <path d="M-8 59 C42 56 94 62 146 59 S236 55 291 60 376 63 428 59 468 57 490 60" stroke="#c39267" stroke-opacity=".14" stroke-width=".8"/>
+    <path d="M24 9 C54 8 76 10 104 8 M172 14 C198 13 220 15 246 13 M319 20 C345 18 362 20 386 18 M56 32 C80 30 99 33 121 31 M203 39 C229 37 247 40 271 38 M341 47 C366 45 388 48 411 46" stroke="#d2a477" stroke-opacity=".17" stroke-width=".65"/>
+    <path d="M-5 17 C18 16 29 17 45 16 M263 27 C280 26 291 27 306 26 M112 48 C127 47 138 48 154 47 M414 57 C432 56 445 57 461 56" stroke="#20120c" stroke-opacity=".45" stroke-width=".65"/>
+  </g>
+  <rect width="480" height="64" filter="url(#fine-texture)" opacity=".035"/>
+</svg>
